@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terraform Static Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .code-block {
+      background-color: #1e1e1e;
+      color: #dcdcdc;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: 'Fira Code', monospace;
+      overflow-x: auto;
+    }
+    .footer {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 2rem;
+    }
+    a {
+      color: #79b8ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .highlight {
+      color: #00e0ff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Terraform Static Website, Made by Deepak Kumar</h1>
+
+  <div class="container">
+    <div class="section">
+      <p>This site is hosted on <span class="highlight">AWS S3</span> and deployed using <span class="highlight">Terraform</span>. Any updates to this file will reflect immediately after re-deployment.</p>
+    </div>
+
+    <div class="section">
+      <h3>Project Details</h3>
+      <ul>
+        <li>Region: <strong>ap-south-1</strong></li>
+        <li>Bucket Name: <strong>my-static-site-bucket-12345</strong></li>
+        <li>Updated On: <span id="last-updated"></span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Deployment Command</h3>
+      <div class="code-block">
+        terraform init<br/>
+        terraform plan<br/>
+        terraform apply
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Created by <a href="#">You</a> • Update regularly to reflect changes
+  </div>
+
+  <script>
+    // Auto-update timestamp
+    document.getElementById("last-updated").textContent = new Date().toLocaleString();
+  </script>
+</body>
+</html>
